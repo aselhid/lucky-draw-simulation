@@ -15,6 +15,8 @@ class RandomGenerator(abc.ABC):
         pass
 
 class QuantumRandomGenerator(RandomGenerator):
+    # since the API have rate limit 1 request/minute
+    # it's not practical to have it simulated
     def pick(self, weights: typing.List[int]) -> int:
         response = requests.get(f'https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint16').json()
         random_number = response['data'][0]

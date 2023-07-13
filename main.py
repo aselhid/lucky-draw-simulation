@@ -20,7 +20,7 @@ INITIAL_POPULATION = [
 
 identity_modifier: typing.Callable[[int], int] = lambda x: x 
 
-exponential_modifier: typing.Callable[[int], int] = lambda x: x ** 10
+quadratic_modifier: typing.Callable[[int], int] = lambda x: x ** 2
 
 fun_lucky_draw = lucky_draw.FunLuckyDraw(
         random_generator.PythonRandomGenerator(),
